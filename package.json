@@ -2,6 +2,7 @@
   "name": "test-dropdown-feature",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://th3engineer.github.io/test-task-dropdown",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

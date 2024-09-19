@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+
+import { Dropdown } from './components/dropdown';
+
+const mockData = [
+  { type: 'symbol', name: 'EA', description: 'Electronic Arts Inc.' },
+  { type: 'symbol', name: 'RA-USD', description: 'EagleCoin USD' },
+  { type: 'symbol', name: 'EADSF', description: 'Airbus Se' },
+  { type: 'page', name: 'EA Quant Rating' },
+  { type: 'page', name: 'EA Income Statement' },
+  { type: 'person', name: 'Early Retiree' },
+  {
+    type: 'headline',
+    title: 'Electronic Arts, Inc. (EA) Q4 2023 Earnings Call Transcript'
+  },
+  {
+    type: 'headline',
+    title: 'Electronic Arts: Uncertainty Around EA ports FC Demand'
+  }
+];
 
 function App() {
+  const [search, setSearch] = useState('');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Dropdown
+        options={mockData}
+        search={search}
+        onSearch={setSearch}
+      />
     </div>
   );
 }
